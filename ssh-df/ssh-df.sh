@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-INSTANCES_FILE="${1:-instances.txt}"
+INSTANCES_FILE="${1:-all}"
 
-PARALLEL="${PARALLEL:-10}"
-TIMEOUT="${TIMEOUT:-10}"
+PARALLEL="${PARALLEL:-40}"
+TIMEOUT="${TIMEOUT:-30}"
 
 WARN_PCT="${WARN_PCT:-80}"
 CRIT_PCT="${CRIT_PCT:-90}"
 
 # Хосты, где есть IR/VipNet интерактивщина
-INTERACTIVE_HOSTS="${INTERACTIVE_HOSTS:-perm-pam-db}"
+INTERACTIVE_HOSTS="${INTERACTIVE_HOSTS:-perm-pam-app,perm-pam-db,perm-pam-esb,perm-pam-map}"
 
 # Скрывать loop/squashfs (snap), чтобы не забивали картину
 HIDE_LOOPS="${HIDE_LOOPS:-1}"
